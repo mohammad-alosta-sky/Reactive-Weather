@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import WeatherCard from './components/WeatherCard';
 import Location from "./components/Location"
 import cities from "./data.js"
+import Form from "./components/Form"
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <h3 className = "subtitle">Up to the minute weather news</h3>
             <div className = "app">
                 {/* Render components here */}
+                <Form location={location} setLocation={setLocation} />
                 <div><Location data={cities} location={location} setLocation= {setLocation}/></div>
                 
                 {cities.map(city => <WeatherCard city={city} />)}

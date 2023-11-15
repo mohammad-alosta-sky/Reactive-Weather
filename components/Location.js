@@ -4,7 +4,15 @@ import icon from "./Icon";
 
 
 function Location({data, location, setLocation}) {
+    
     const cityData = data.find(({city}) => city === location);
+    if (cityData == undefined) {
+        return (
+            <div className="card">
+                <h3>"Location not found"</h3>
+            </div>
+        )
+    }
 
     return (
         <div className = "card">
